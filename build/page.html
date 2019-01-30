@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Template</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="css/app.css">
+  </head>
+
+  <body>
+    <!-- BEGIN content -->
+    <div class="out">
+      <h1></h1>
+      <nav>
+        <ul>
+          <li>
+            <a class="nav__link" href="#">Forecast</a>
+            <p>blablabla</p>
+          </li>
+          <li>
+            <a class="nav__link" href="#">Tokens</a>
+            <p>blablabla</p>
+          </li>
+          <li>
+            <a class="nav__link" href="#">About</a>
+            <p>blablabla</p>
+          </li>
+        </ul>
+      </nav>
+      <svg class="icon icon-facebook">
+        <use xlink:href="img/sprite.svg#icon-facebook"></use>
+      </svg>
+      <!-- FORM -->
+      <form action="get" class="name">
+        <input type="text" placeholder="E-mail" class="name__input">
+      </form>
+      <!-- Массив передаеться в макрос -->
+      <ul>
+        <li><a class="nav__link" href="#">one</a></li>
+        <li><a class="nav__link" href="#">two</a></li>
+        <li><a class="nav__link" href="#">three</a></li>
+        <li><a class="nav__link" href="#">bear</a></li>
+      </ul>
+      <!-- просто пример -->
+      <p>Cat</p>
+      <p>Dog</p>
+      <p>Bear</p>
+      <!-- 											FILTERS 												 -->
+      <!-- по модулю -->
+      <p>11</p>
+      <br>
+      <!-- BATCH --> * group items * by some * defined number <br>
+      <!-- SORT --> Andy Bill Carl Drew Etan Fill Zack <br>
+      <!-- ESCAPE --> &lt;html&gt;
+      <!-- не работает -->
+      <br> %C2%A9 <br> %3Chtml%3E <br>
+      <!-- GROUP BY -->
+      <b>1</b> : Forecast About <br>
+      <b>2</b> : Tokens Contact <br>
+      <br>
+      <!-- JOIN --> Forecast+Tokens+About <br>
+      <!-- UPPER --> CAPSLOCK <br>
+      <!-- LOWER --> Caps lock <br>
+      <!-- TITLE --> Happy New Year <br>
+      <!-- ROUND -->
+      <ul>
+        <li>5</li>
+        <li>4</li>
+      </ul>
+      <br>
+      <!-- SLICE -->
+      <div class="div">
+        <ul class="list-1">
+          <li>forecast</li>
+          <li>about</li>
+          <li>token</li>
+          <li>contact</li>
+        </ul>
+        <ul class="list-2">
+          <li>sign in</li>
+          <li>log out</li>
+          <li>help</li>
+        </ul>
+      </div>
+      <br>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <p>
+        <!-- begin input -->
+        <label class="checkbox">
+          <input type="checkbox" name="checkbox">
+          <span class="checkbox__text">checkbox</span>
+        </label>
+        <!-- end input -->
+      </p>
+      <p>
+        <!-- begin input -->
+        <label class="checkbox">
+          <input type="checkbox" name="exemple-name" checked>
+          <span class="checkbox__text">checkbox-checked</span>
+        </label>
+        <!-- end input -->
+      </p>
+      <!-- begin input -->
+      <label class="radio">
+        <input type="radio" name="exemple-name">
+        <span class="radio__text">text</span>
+      </label>
+      <!-- end input -->
+      <!-- begin breadcrumbs -->
+      <ul class="breadcrumbs">
+        <li class="breadcrumbs__item">
+          <a href="#">Главная</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <a href="#">Внутренняя</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <span>Корзина</span>
+        </li>
+      </ul>
+      <!-- end breadcrumbs -->
+    </div>
+    <!-- END content -->
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <!-- END scripts -->
+  </body>
+
+</html>

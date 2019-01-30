@@ -1,0 +1,119 @@
+<nav>
+	<ul>
+		{% set nav = [{ title: 'Forecast', desc: 'blablabla' }, { title: 'Tokens', desc: 'blablabla' }, { title: 'About', desc: 'blablabla' }] %}
+		{% for item in nav %}
+		<li>
+			<a class="nav__link" href="#">{{ item.title }}</a>
+			<p>{{item.desc}}</p>
+		</li>
+		{% endfor %}
+	</ul>
+</nav>
+
+{{ mixins.icon('facebook') }}
+
+<!-- FORM -->
+{{ mixins.form({
+	action: 'get',
+	class: 'name',
+	placeholder: 'E-mail'
+}) }}
+
+<!-- Массив передаеться в макрос -->
+{{ mixins.test({
+	list: ['one','two','three', ['cat', 'dog', 'bear']]
+}) }}
+
+<!-- просто пример -->
+{{ mixins.para({
+	links : ['cat', 'dog', 'bear']
+}) }}
+
+<!-- 											FILTERS 												 -->
+
+<!-- по модулю -->
+<p>{{ -11 | abs }}</p>
+<br>
+
+<!-- BATCH -->
+{% set items = ['group', 'items', 'by', 'some', 'defined', 'number'] %}
+{% for item in items | batch(2) %}
+	*{% for items in item %} {{ items }} {% endfor %}
+{% endfor %}
+<br>
+
+<!-- SORT -->
+{% set items = {
+    'Etan': 1,
+    'Drew': 2,
+    'Carl': 3,
+    'Andy': 4,
+    'Fill': 5,
+    'Bill': 6,
+    'Zack' : 7
+} %}
+{% for item in items | dictsort %}
+    {{ item[0] }}
+{% endfor %}
+<br>
+
+<!-- ESCAPE -->
+{{ '<html>' | escape }} <!-- не работает -->
+<br>
+{{ "©" | urlencode }}
+<br>
+{{ "<html>" | urlencode }}
+<br>
+
+<!-- GROUP BY -->
+		{% set nav = [{ title: 'Forecast', desc: '1' }, { title: 'Tokens', desc: '2' }, { title: 'About', desc: '1' }, { title : 'Contact', desc: '2' }] %}
+		{% for desc, items in nav | groupby('desc') %}
+			<b>{{ desc }}</b> :
+	    {% for item in items %}
+	        {{ item.title }}
+	    {% endfor %}<br>
+		{% endfor %}
+<br>
+
+<!-- JOIN -->
+{% set items = [
+	{ title: 'Forecast'},
+	{ title: 'Tokens'},
+	{ title: 'About'}
+] %}
+{{items | join('+', 'title')}}
+<br>
+
+<!-- UPPER -->
+{{'capslock' | upper}}
+<br>
+<!-- LOWER -->
+{{'CAPS LOCK' | lower | capitalize}}
+<br>
+<!-- TITLE -->
+{{'Happy New Year' | title}}
+<br>
+
+<!-- ROUND -->
+{% set items = [ 4.5, 4.4] %}
+<ul>
+	{% for item in items %}
+	    <li>{{item | round}}</li>
+	{% endfor %}
+</ul>
+<br>
+
+<!-- SLICE -->
+{% set arr = ['forecast', 'about', 'token', 'contact', 'sign in', 'log out', 'help'] %}
+
+<div class="div">
+  {% for items in arr | slice(2) %}
+    <ul class="list-{{ loop.index }}">
+    {% for item in items %}
+      <li>{{ item }}</li>
+    {% endfor %}
+    </ul>
+  {% endfor %}
+</div>
+<br>
+
